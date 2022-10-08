@@ -1,26 +1,51 @@
-﻿/* Задача 2: Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
+﻿// Задача 10: Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
 
-a = 5; b = 7 -> max = 7
-a = 2 b = 10 -> max = 10
-a = -9 b = -3 -> max = -3 */
+// 456 -> 5
+// 782 -> 8
+// 918 -> 1
 
 Console.Clear();
-Console.WriteLine("Введите первое число: ");
+Console.Write("Введи трёхзначное число: ");
 int num = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите второе число: ");
-int num2 = Convert.ToInt32(Console.ReadLine());
-int max = 0; int min = 0;
+string num1 = Convert.ToString(num);
+Console.WriteLine("вторая цифра этого числа "+num1[1]);
 
-if (num > num2)
+
+// Задача 13: Напишите программу, которая выводит третью цифру СЛЕВА заданного числа или сообщает, что третьей цифры нет.
+// 645 -> 5
+// 78 -> третьей цифры нет
+// 3267912 -> 6
+
+Console.Clear();
+Console.Write("Введи число: ");
+int num = Convert.ToInt32(Console.ReadLine());
+string num1 = Convert.ToString(num);
+if (num1.Length > 2)
 {
-    max = num;
-    min = num2;
+  Console.WriteLine("третья цифра " + num1[2]);
+}
+else {
+  Console.WriteLine("третьей цифры нет");
 }
 
-else
+// Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
+// 6 -> да
+// 7 -> да
+// 1 -> нет
+
+Console.Clear();
+Console.Write("Введи число, которое обозначает день недели: ");
+int num = Convert.ToInt32(Console.ReadLine());
+void CheckingTheDayOfTheWeek (int num)
 {
-    max = num2;
-    min = num;
+    if (num == 6 || num == 7) 
+{
+  Console.WriteLine("этот день выходной");
 }
-Console.WriteLine($"Наибольшее число: {max}");
-Console.WriteLine($"Наименьшее число: {min}");
+  else if (num < 1 || num > 7) 
+  {
+    Console.WriteLine("не день недели");
+  }
+  else Console.WriteLine("не выходной");
+}
+CheckingTheDayOfTheWeek(num);
